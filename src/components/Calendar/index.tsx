@@ -79,6 +79,7 @@ export function Calendar({ selectedDate, onDateSelected }: CalendarProps) {
     if (!blockedDates) {
       return []
     }
+    console.log('calendarWeeks ~ blockedDates', blockedDates)
 
     const daysInMonthArray = Array.from({
       length: currentDate.daysInMonth(),
@@ -100,7 +101,6 @@ export function Calendar({ selectedDate, onDateSelected }: CalendarProps) {
       'date',
       currentDate.daysInMonth(),
     )
-
     const lastWeekDay = lastDayInCurrentMonth.get('day')
 
     const nextMonthFillArray = Array.from({
@@ -152,11 +152,12 @@ export function Calendar({ selectedDate, onDateSelected }: CalendarProps) {
         <CalendarTitle>
           {currentMonth} <span>{currentYear}</span>
         </CalendarTitle>
+
         <CalendarActions>
-          <button onClick={handlePreviousMonth} title="Previous Month">
+          <button onClick={handlePreviousMonth} title="Previous month">
             <CaretLeft />
           </button>
-          <button onClick={handleNextMonth} title="Next Month">
+          <button onClick={handleNextMonth} title="Next month">
             <CaretRight />
           </button>
         </CalendarActions>
@@ -165,8 +166,8 @@ export function Calendar({ selectedDate, onDateSelected }: CalendarProps) {
       <CalendarBody>
         <thead>
           <tr>
-            {shortWeekDays.map((weekday) => (
-              <th key={weekday}>{weekday}.</th>
+            {shortWeekDays.map((weekDay) => (
+              <th key={weekDay}>{weekDay}.</th>
             ))}
           </tr>
         </thead>

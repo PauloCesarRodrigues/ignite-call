@@ -4,7 +4,6 @@ export const Container = styled(Box, {
   margin: '$6 auto 0',
   padding: 0,
   display: 'grid',
-  maxWidth: '100%',
   position: 'relative',
 
   variants: {
@@ -12,7 +11,7 @@ export const Container = styled(Box, {
       true: {
         gridTemplateColumns: '1fr 280px',
 
-        '@media(max-width:900px)': {
+        '@media(max-width: 900px)': {
           gridTemplateColumns: '1fr',
         },
       },
@@ -37,9 +36,8 @@ export const TimePicker = styled('div', {
 })
 
 export const TimePickerHeader = styled(Text, {
-  textTransform: 'capitalize',
-
   fontWeight: '$medium',
+
   span: {
     color: '$gray200',
   },
@@ -70,10 +68,10 @@ export const TimePickerItem = styled('button', {
     marginBottom: '$6',
   },
 
-  '&disabled': {
+  '&:disabled': {
     background: 'none',
-    opacity: 0.4,
     cursor: 'default',
+    opacity: 0.4,
   },
 
   '&:not(:disabled):hover': {
