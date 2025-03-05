@@ -1,5 +1,6 @@
+// import dayjs from 'dayjs'
+import { NextApiRequest, NextApiResponse } from 'next'
 import { prisma } from '@/lib/prisma'
-import type { NextApiRequest, NextApiResponse } from 'next'
 
 export default async function handler(
   req: NextApiRequest,
@@ -13,7 +14,7 @@ export default async function handler(
   const { year, month } = req.query
 
   if (!year || !month) {
-    return res.status(400).json({ message: 'Year or month not specified' })
+    return res.status(400).json({ message: 'Year or month not specified.' })
   }
 
   const user = await prisma.user.findUnique({
