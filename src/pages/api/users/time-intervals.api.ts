@@ -8,8 +8,8 @@ const timeIntervalsBodySchema = z.object({
   intervals: z.array(
     z.object({
       weekDay: z.number().min(0).max(6),
-      startTimeInMinutes: z.number().min(0).max(1439),
-      endTimeInMinutes: z.number().min(0).max(1439),
+      startTimeInMinutes: z.number().min(0)
+      endTimeInMinutes: z.number().min(0)
     }),
   ),
 })

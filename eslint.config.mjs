@@ -15,6 +15,9 @@ const eslintConfig = [
     'next/typescript',
     '@rocketseat/eslint-config/react',
   ),
+  {
+    ignores: ['node_modules/', 'dist/', 'build/', '.next/'],
+  },
 ]
 
 export default eslintConfig
