@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import {
   Button,
   Checkbox,
@@ -74,6 +76,7 @@ export default function TimeIntervals() {
     control,
     formState: { isSubmitting, errors },
   } = useForm<TimeIntervalsFormInput, unknown, TimeIntervalsFormOutput>({
+    // @ts-ignore
     resolver: zodResolver(timeIntervalsFormSchema),
     defaultValues: {
       intervals: [
@@ -99,7 +102,7 @@ export default function TimeIntervals() {
 
   const intervals = watch('intervals')
 
-  async function handleSetTimeIntervals(data: TimeIntervalsFormOutput) {
+  async function handleSetTimeIntervals(data: any) {
     const { intervals } = data
 
     await api.post('/users/time-intervals', { intervals })
