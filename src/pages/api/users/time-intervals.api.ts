@@ -44,7 +44,6 @@ export default async function handler(
       })
     }),
   )
-  // await prisma.userTimeInterval.createMany <--- n da no SQLite
 
   return res.status(201).end()
 }
