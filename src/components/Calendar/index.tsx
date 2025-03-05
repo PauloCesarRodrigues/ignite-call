@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { CaretLeft, CaretRight } from 'phosphor-react'
 import {
   CalendarActions,
